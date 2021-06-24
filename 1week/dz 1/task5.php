@@ -33,10 +33,18 @@ $opel = [
     'doors'=> '5',
     'year' => '2019',
 ];
-$cars = ['bmw'=> $bmw, 'toyota'=> $toyota, 'opel' => $opel];
-echo $cars['bmw'];
-/** я не очень поняла, как нужно выводить массив. и почему нужно делать ассоциативный массив как в воркшопе. в методичках
- *такого не было. я запуталась.
- */
+$cars = [["name" => "bmw", "value" => $bmw],
+         ["name" => "toyota", "value" => $toyota],
+         ["name" => "opel", "value" => $opel]];
 
+foreach ($cars as $value) {
+    echo "CAR " . $value["name"];
+    echo "<br>";
+
+    foreach ($value["value"] as $item) {
+        echo $item . " ";
+    }
+    echo "<br>";
+    echo "<br>";
+}
 
