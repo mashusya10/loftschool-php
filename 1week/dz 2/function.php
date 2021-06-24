@@ -1,14 +1,12 @@
 <?php
-function task1 (array $strings, bool $return = true) {
-
-    $result = implode("\n", array_map(function (string $str) {
-        return "<p>$str</p>";
-    }, $strings));
-
-    if ($return) {
-        return $result;
+function task1($arr, $bool = false)
+{
+    foreach ($arr as $item) {
+        echo "<p>", $item, "</p>";
     }
-    echo $result;
+    if ($bool) {
+        return implode(" ", $arr);
+    }
 }
 
 
